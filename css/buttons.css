@@ -1,0 +1,38 @@
+.header-button{
+    display: inline-block;
+    text-align: center;
+    background-color: silver;
+    border: black 1px solid;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.button{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    background-color: silver;
+    border: black 1px solid;
+    border-radius: 50%;
+}
+
+.close-button{
+    margin-left: 50px;
+    margin-right: 2px;
+}
+
+.desktop-refresh-button{
+    display: none;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+@media (min-width: 1000px){
+    .mobile-refresh-button{
+        display: none;
+    }
+
+    .desktop-refresh-button{
+        display: inline-block;
+    }
+}

@@ -1,0 +1,9 @@
+.weather-image{
+    width: 16%;
+    border-radius: 50%;
+}
+
+.local-image{
+    width: 40%;
+    border-radius: 50%;
+}

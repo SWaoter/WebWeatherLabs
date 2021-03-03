@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/weather.css">
+    <link rel="stylesheet" href="./css/images.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+</head>
+<body>
+    <header>
+        <h2>Погода</h2>
+        <button class="header-button">
+            <span class="mobile-refresh-button">&#8634</span>
+            <span class="desktop-refresh-button">Обновить Геолокацию</span>
+        </button>
+    </header>
+    <main class="flex-container">
+        <section class="weather-container">
+            <h1>Санкт-Петербург</h1>
+            <div class="main-weather-container">
+                <img src="./images/rain.gif" alt="logo" class="local-image">
+                <span class="current-temperature">8&degC</span>
+            </div>
+        </section>
+        <section class="weather-container">
+            <ul>
+                <li class="weather-container-item">
+                    <span class="weather-part">Ветер</span>
+                    <span class="weather-part-content">7 м/с</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Облачность</span>
+                    <span class="weather-part-content">Высокая</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Давление</span>
+                    <span class="weather-part-content">1013 мм. рт. ст.</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Влажность</span>
+                    <span class="weather-part-content">54%</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Координаты</span>
+                    <span class="weather-part-content">[59.88, 30.42]</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="favorites">
+            <h2>Избранное</h2>
+            <div class="search">
+                <input class="search-type" type="search" placeholder="Добавить новый город">
+                <button class="button">&#10010</button>
+            </div>
+        </section>
+
+        <section class="weather-container">
+            <div class="weather-container-header">
+                <div class="weather-container-header-left">
+                    <h3>Киев</h3>
+                    <span class="regular-temperature">5&degC</span>
+                </div>
+                <div class="weather-container-header-right">
+                    <img class="weather-image" src="./images/rain.gif" alt="logo">
+                    <button class="button close-button">X</button>
+                </div>
+            </div>
+            <ul>
+                <li class="weather-container-item">
+                    <span class="weather-part">Ветер</span>
+                    <span class="weather-part-content">6 м/с</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Облачность</span>
+                    <span class="weather-part-content">Высокая</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Давление</span>
+                    <span class="weather-part-content">1100 мм. рт. ст.</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Влажность</span>
+                    <span class="weather-part-content">61%</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Координаты</span>
+                    <span class="weather-part-content">[50.45, 30.51]</span>
+                </li>
+            </ul>
+        </section>
+        <section class="weather-container">
+            <div class="weather-container-header">
+                <div class="weather-container-header-left">
+                    <h3>Стохес</h3>
+                    <span class="regular-temperature">23&degC</span>
+                </div>
+                <div class="weather-container-header-right">
+                    <img class="weather-image" src="./images/rain.gif" alt="logo">
+                    <button class="button close-button">X</button>
+                </div>
+            </div>
+            <ul>
+                <li class="weather-container-item">
+                    <span class="weather-part">Ветер</span>
+                    <span class="weather-part-content">8 м/c</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Облачность</span>
+                    <span class="weather-part-content">Низкая</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Давление</span>
+                    <span class="weather-part-content">775 мм. рт. ст.</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Влажность</span>
+                    <span class="weather-part-content">52%</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Координаты</span>
+                    <span class="weather-part-content">[38.22, 27.03]</span>
+                </li>
+            </ul>
+        </section>
+        <section class="weather-container">
+            <div class="weather-container-header">
+                <div class="weather-container-header-left">
+                    <h3>Трост</h3>
+                    <span class="regular-temperature">17&degC</span>
+                </div>
+                <div class="weather-container-header-right">
+                    <img class="weather-image" src="./images/rain.gif" alt="logo">
+                    <button class="button close-button">X</button>
+                </div>
+            </div>
+            <ul>
+                <li class="weather-container-item">
+                    <span class="weather-part">Ветер</span>
+                    <span class="weather-part-content">4 м/c</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Облачность</span>
+                    <span class="weather-part-content">Низкая</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Давление</span>
+                    <span class="weather-part-content">758 мм. рт. ст.</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Влажность</span>
+                    <span class="weather-part-content">52%</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Координаты</span>
+                    <span class="weather-part-content">[37.53, 26.92]</span>
+                </li>
+            </ul>
+        </section>
+        <section class="weather-container">
+            <div class="weather-container-header">
+                <div class="weather-container-header-left">
+                    <h3>Гусь-Хрустальный</h3>
+                    <span class="regular-temperature">0&degC</span>
+                </div>
+                <div class="weather-container-header-right">
+                    <img class="weather-image" src="./images/rain.gif" alt="logo">
+                    <button class="button close-button">X</button>
+                </div>
+            </div>
+            <ul>
+                <li class="weather-container-item">
+                    <span class="weather-part">Ветер</span>
+                    <span class="weather-part-content">4 м/c</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Облачность</span>
+                    <span class="weather-part-content">Средняя</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Давление</span>
+                    <span class="weather-part-content">800 мм. рт. ст.</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Влажность</span>
+                    <span class="weather-part-content">76%</span>
+                </li>
+                <li class="weather-container-item">
+                    <span class="weather-part">Координаты</span>
+                    <span class="weather-part-content">[55.36, 40.39]</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
