@@ -16,6 +16,10 @@
     border-radius: 50%;
 }
 
+.button:hover{
+    cursor: pointer;
+}
+
 .close-button{
     margin-left: 50px;
     margin-right: 2px;
@@ -25,6 +29,10 @@
     display: none;
     font-size: 17px;
     padding-bottom: 10px;
+}
+
+.desktop-refresh-button:hover{
+    cursor: pointer;
 }
 
 @media (min-width: 1000px){
