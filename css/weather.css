@@ -5,6 +5,7 @@
     height: 48px;
     background-color: gray;
     border-radius: 5px;
+    font-size: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +20,6 @@
     width: 48%;
     text-align: right;
     color: honeydew;
-    font-size: 24px;
 }
 
 .current-temperature{
@@ -31,6 +31,7 @@
     width: 50%;
     text-align: right;
     display: inline-block;
+    flex: 1 1;
 }
 
 .search-type{
@@ -38,6 +39,8 @@
     border: black 0.5px solid;
     border-radius: 5%;
     height: 40px;
+    width: 280px;
+    text-align: center;
 }
 
 .weather-container-header{
@@ -69,20 +72,67 @@
 }
 
 .weather-container{
-    width: 90%;
+    list-style: none;
+    width: 95%;
 }
 
 .favorites{
-    width: 90%;
+    width: 95%;
+    display: flex;
+    align-items: center;
 }
 
 .regular-temperature{
-    font-size: 30px;
+    font-size: 1em;
     margin-left: 20px;
+}
+
+.ul-list-format{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 @media (min-width: 992px){
     .weather-container{
         width: 45%;
+    }
+}
+
+@media (max-width: 992px){
+    .favorites{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search{
+        width: 100%;
+        margin-top: 15px;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .search-type{
+        width: 85%;
+    }
+
+    .regular-temperature{
+        font-size: 0.7em;
+    }
+
+    .weather-container-item{
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 650px){
+    .regular-temperature{
+        font-size: 0.5em;
+    }
+
+    .weather-container-item{
+        font-size: 0.5em;
     }
 }

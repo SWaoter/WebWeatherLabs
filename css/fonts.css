@@ -24,3 +24,15 @@ ul{
         font-size: 30;
     }
 }
+
+@media (max-width: 992px){
+    h3{
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 650px){
+    h3{
+        font-size: 0.5em;
+    }
+}
