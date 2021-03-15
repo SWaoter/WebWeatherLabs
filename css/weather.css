@@ -47,6 +47,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 64px;
 }
 
 .weather-container-header-left, .weather-container-header-right{
@@ -58,6 +59,7 @@
 
 .weather-container-header-right{
     justify-content: flex-end;
+    height: 100%;
 }
 
 .main-weather-container{
@@ -93,6 +95,13 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.weather-main{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 @media (min-width: 992px){

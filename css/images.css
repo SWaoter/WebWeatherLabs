@@ -1,9 +1,19 @@
 .weather-image{
-    width: 16%;
+    height: 100%;
+    width: 64px;
+    margin: auto;
+}
+
+.weather-image img{
     border-radius: 50%;
+    height: 100%;
+    width: 100%;
 }
 
 .local-image{
     width: 40%;
+}
+
+.local-image img{
     border-radius: 50%;
 }
