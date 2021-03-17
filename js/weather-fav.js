@@ -7,43 +7,47 @@ const weatherFavourite = {
 
         for (let i = 0; i < localStorage.length; i++) {
             let city = localStorage.key(i);
-            let weatherItem = document.createElement("li");
+            let weathI = document.createElement("li");
 
-            weatherItem.setAttribute('class', "weather-container");
-            weatherItem.setAttribute('id', `city-${city}`);
-            weatherItem.innerHTML = `<p>Loading ${city}...</p>`
+            weathI.setAttribute('class', "weather-container");
+            weathI.setAttribute('id', `city-${city}`);
+            weathI.innerHTML = `<p>Loading ${city}...</p>`
 
-            fav_list.append(weatherItem);
+            fav_list.append(weathI);
 
             this.loadCity(city).then(weatherData => {
-                this.addHtml(weatherItem, weatherData);
+                this.addHtml(weathI, weatherData);
             });
         }
     },
 
     loadCity(city) {
-        return weatherAPI.getByCity(city).then(res => res.json()).then(data => {
-            if (data.cod !== 200) {
-                throw new Error(data.message);
-            }
+        return weatherAPI.getByCity(city).then(res => res.json()).then(data =>
+            {
+                if (data.cod !== 200)
+                {
+                    throw new Error(data.message);
+                }
 
-            return weatherDto.getWeatherData(data);
-            }).catch(error => {
-            if (error instanceof TypeError) {
-                throw new Error("Network error");
-            }
+                return weatherDto.getWeatherData(data);
+            }).catch(error =>
+            {
+                if (error instanceof TypeError)
+                {
+                    throw new Error("Network error");
+                }
 
-            throw error;
-        });
+                throw error;
+            });
     },
 
     addCity(city) {
         let fav_list = document.getElementById("list-fav");
-        let weatherItem = document.createElement("li");
+        let weathI = document.createElement("li");
 
-        weatherItem.setAttribute('class', "weather-container");
-        weatherItem.innerHTML = `<p>Loading ${city}...</p>`
-        fav_list.append(weatherItem);
+        weathI.setAttribute('class', "weather-container");
+        weathI.innerHTML = `<p>Loading ${city}...</p>`
+        fav_list.append(weathI);
 
         this.loadCity(city).then(weatherData => {
             let name = weatherData.name;
@@ -52,38 +56,37 @@ const weatherFavourite = {
                 console.log(3);
                 localStorage.setItem(name, name);
 
-                weatherItem.setAttribute('id', `city-${name}`);
+                weathI.setAttribute('id', `city-${name}`);
 
-                this.addHtml(weatherItem, weatherData);
+                this.addHtml(weathI, weatherData);
             } else {
+                fav_list.removeChild(weathI);
                 alert("The city already exists")
             }
         }).catch(error => {
             alert(error);
-
-            fav_list.removeChild(weatherItem);
         })
     },
 
-    addHtml(weatherItem, weatherData) {
+    addHtml(weathI, weatherData) {
         const {name, temperature, pressure, wind, clouds, humidity, coords, icon} = weatherData;
 
         let html = document.getElementById("weather-fav-tmp").content.cloneNode(true);
 
-        weatherItem.innerHTML = "";
-        weatherItem.append(html);
-        weatherItem.setAttribute("id", `city-${name}`);
+        weathI.innerHTML = "";
+        weathI.append(html);
+        weathI.setAttribute("id", `city-${name}`);
 
-        weatherItem.getElementsByClassName("img-fav")[0].innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
-        weatherItem.getElementsByClassName("name-fav")[0].innerHTML = `${name}`;
-        weatherItem.getElementsByClassName("temp-fav")[0].innerHTML = `${temperature}°C`;
-        weatherItem.getElementsByClassName("wind-fav")[0].innerHTML = `${wind} m/s`;
-        weatherItem.getElementsByClassName("cloud-fav")[0].innerHTML = `${clouds}%`;
-        weatherItem.getElementsByClassName("press-fav")[0].innerHTML = `${pressure} hpa`;
-        weatherItem.getElementsByClassName("wet-fav")[0].innerHTML = `${humidity}%`;
-        weatherItem.getElementsByClassName("dots-fav")[0].innerHTML = `${coords}`;
+        weathI.getElementsByClassName("img-fav")[0].innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
+        weathI.getElementsByClassName("name-fav")[0].innerHTML = `${name}`;
+        weathI.getElementsByClassName("temp-fav")[0].innerHTML = `${temperature}°C`;
+        weathI.getElementsByClassName("wind-fav")[0].innerHTML = `${wind} m/s`;
+        weathI.getElementsByClassName("cloud-fav")[0].innerHTML = `${clouds}%`;
+        weathI.getElementsByClassName("press-fav")[0].innerHTML = `${pressure} hpa`;
+        weathI.getElementsByClassName("wet-fav")[0].innerHTML = `${humidity}%`;
+        weathI.getElementsByClassName("dots-fav")[0].innerHTML = `${coords}`;
 
-        let removeCityButton = weatherItem.getElementsByClassName("close-button")[0];
+        let removeCityButton = weathI.getElementsByClassName("close-button")[0];
 
         removeCityButton.addEventListener('click', () => {
             document.getElementById(`city-${name}`).remove();
