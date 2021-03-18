@@ -27,7 +27,7 @@ const weatherMain = {
         weatherHereBody.innerHTML = "";
         weatherHereBody.append(html);
 
-        document.getElementById("img-main").innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
+        document.getElementById("img-main").innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
         document.getElementById("name-main").innerHTML = `${name}`;
         document.getElementById("temp-main").innerHTML = `${temp}°C`;
         document.getElementById("wind-main").innerHTML = `${wind} m/s`;

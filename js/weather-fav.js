@@ -76,7 +76,7 @@ const weatherFavourite = {
         weathI.append(html);
         weathI.setAttribute("id", `city-${name}`);
 
-        weathI.getElementsByClassName("img-fav")[0].innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
+        weathI.getElementsByClassName("img-fav")[0].innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
         weathI.getElementsByClassName("name-fav")[0].innerHTML = `${name}`;
         weathI.getElementsByClassName("temp-fav")[0].innerHTML = `${temperature}°C`;
         weathI.getElementsByClassName("wind-fav")[0].innerHTML = `${wind} m/s`;
