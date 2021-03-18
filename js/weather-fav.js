@@ -62,6 +62,7 @@ const weatherFavourite = {
                 alert("The city already exists")
             }
         }).catch(error => {
+            fav_list.removeChild(weathI);
             alert(error);
         })
     },
