@@ -19,7 +19,7 @@ const weatherMain = {
     },
 
     addHtml(weatherData) {
-        const {name, temp, press, wind, cloud, wet, dots, icon} = weatherData;
+        const {name, temperature, pressure, wind, clouds, humidity, coords, icon} = weatherData;
 
         let weatherHereBody = document.getElementById("weather-main");
         let html = document.getElementById("weather-main-tmp").content.cloneNode(true);
@@ -29,12 +29,12 @@ const weatherMain = {
 
         document.getElementById("img-main").innerHTML = `<img src="https://openweathermap.org/img/wn/${icon}@4x.png" alt="logo">`;
         document.getElementById("name-main").innerHTML = `${name}`;
-        document.getElementById("temp-main").innerHTML = `${temp}°C`;
+        document.getElementById("temp-main").innerHTML = `${temperature}°C`;
         document.getElementById("wind-main").innerHTML = `${wind} m/s`;
-        document.getElementById("cloud-main").innerHTML = `${cloud}%`;
-        document.getElementById("press-main").innerHTML = `${press} hpa`;
-        document.getElementById("wet-main").innerHTML = `${wet}%`;
-        document.getElementById("dots-main").innerHTML = `${dots}`;
+        document.getElementById("cloud-main").innerHTML = `${clouds}%`;
+        document.getElementById("press-main").innerHTML = `${pressure} hpa`;
+        document.getElementById("wet-main").innerHTML = `${humidity}%`;
+        document.getElementById("dots-main").innerHTML = `${coords}`;
     },
 };
 

@@ -1,4 +1,4 @@
-let longitude =  "30.3136768";
+let longitude =  "30.536768";
 let latitude = "59.998208";
 
 const geolocationApi = {
