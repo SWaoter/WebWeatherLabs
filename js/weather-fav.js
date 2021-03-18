@@ -51,9 +51,7 @@ const weatherFavourite = {
 
         this.loadCity(city).then(weatherData => {
             let name = weatherData.name;
-            console.log(2);
             if (!localStorage.getItem(name)) {
-                console.log(3);
                 localStorage.setItem(name, name);
 
                 weathI.setAttribute('id', `city-${name}`);
