@@ -7,9 +7,14 @@ let refreshButton = document.getElementById("refresh-button");
 let searchForm = document.getElementById("search-form");
 
 refreshButton.addEventListener("click", () => {
-    geolocationApi.update().catch(() => {
-       alert("ERROR");
-   });
+    navigator.permissions.query({name:'geolocation'}).then(function(result) {
+        if (result.state === 'granted'){
+            weatherMain.load();
+        }
+        else{
+            alert("geolocation disabled");
+        }
+      });
 });
 
 searchForm.addEventListener("keydown", (event) => {

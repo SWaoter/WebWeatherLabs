@@ -30,29 +30,36 @@ const weatherFavourite = {
     },
 
     addCity(city) {
-        let fav_list = document.getElementById("list-fav");
-        let weathI = document.createElement("li");
+        if (city)
+        {
+            let fav_list = document.getElementById("list-fav");
+            let weathI = document.createElement("li");
 
-        weathI.setAttribute('class', "weather-container");
-        weathI.innerHTML = `<p>Loading ${city}...</p>`
-        fav_list.append(weathI);
+            weathI.setAttribute('class', "weather-container");
+            weathI.innerHTML = `<p>Loading ${city}...</p>`
+            fav_list.append(weathI);
 
-        favouritesAPI.addCity(city)
-            .then(res => res.json())
-            .then(res => {
-                if (res.message !== "ok") {
-                    throw new Error(res.message);
-                }
-                this.loadCity(city)
-                    .then(weather => {
-                        weathI.setAttribute('id', `city-${weather.city}`);
-                        this.addHtml(weathI, weather);
-                    })
-            })
-            .catch(e => {
-                fav_list.removeChild(weathI);
-                alert(e);
-            });
+            favouritesAPI.addCity(city)
+                .then(res => res.json())
+                .then(res => {
+                    if (res.message !== "ok") {
+                        throw new Error(res.message);
+                    }
+                    this.loadCity(city)
+                        .then(weather => {
+                            weathI.setAttribute('id', `city-${weather.city}`);
+                            this.addHtml(weathI, weather);
+                        })
+                })
+                .catch(e => {
+                    fav_list.removeChild(weathI);
+                    alert(e);
+                });
+        }
+        else
+        {
+            alert("Empty string");
+        }
     },
 
     addHtml(weathI, weatherData) {
@@ -75,8 +82,12 @@ const weatherFavourite = {
 
         let removeCityButton = weathI.getElementsByClassName("close-button")[0];
 
-        removeCityButton.addEventListener('click', () => {
+        removeCityButton.addEventListener('click', (e) => {
+            let button = e.target;
+            button.disabled = true;
             favouritesAPI.removeCity(name).then(() => document.getElementById(`city-${name}`).remove()).catch(e => alert(e));
+        }).finally(() => {
+            button.disabled = false;
         });
     }
 };

@@ -72,12 +72,12 @@ router.post('/favourites', async (req, res) => {
   if (data.cod !== 200) {
     response.message = data.message;
 
-    res.status(400);
+    res.status(404);
   } else {
     let fav = req.session.favourites || [];
 
     if (fav.includes(data.name)) {
-      res.status(400);
+      res.status(404);
 
       response.message = "city already exists";
     } else {

@@ -14,8 +14,14 @@ const weatherMain = {
                 console.log(data);
                 this.addHtml(weatherData);
             }).catch((error) => {
-                alert(error);
+                if (error instanceof TypeError) {
+                    alert("Network error");
+                } else {
+                    alert(error);
+                }
             });
+        }).catch(() => {
+            alert("Enable geolocation");
         });
     },
 
